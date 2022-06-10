@@ -6,5 +6,6 @@
 
 module.exports = {
   siteName: 'CCWIPP',
+  siteDescription: 'Commercial site',
   plugins: []
 }
