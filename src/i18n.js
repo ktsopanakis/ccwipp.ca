@@ -5,12 +5,18 @@ const messages = {
       message: {
         hello: 'hello world',
         about: 'about'
+      },
+      image: {
+        logo: './the-pension-plan_logo.png'
       }
     },
     ja: {
       message: {
         hello: 'こんにちは、世界',
         about: 'こんに'
+      },
+      image: {
+        logo: './the-pension-plan_logo_ja.png'
       }
     }
   }

@@ -13,8 +13,6 @@ const app = createApp( App)
     .use( router)
     .use( createMetaManager())
     .use(i18n)
-
-await router.isReady()
-app.mount('#app')
+    .mount('#app')
 
 
