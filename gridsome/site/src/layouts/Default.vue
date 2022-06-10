@@ -3,11 +3,15 @@
     <header class="header">
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+          
+          <select v-model="currentLocale" @change="localeChanged">
+    <option v-for="locale in availableLocales" :key="locale" :value="locale">{{ locale }}</option>
+  </select>
       </strong>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-        <g-link class="nav__link" to="/about-two/">AboutTwo</g-link>
+        <g-link class="nav__link" :to="$tp('/')" >Home</g-link>
+        <g-link class="nav__link" :to="$tp('/about/')" >About</g-link>
+        <g-link class="nav__link" :to="$tp('/about-two/')"  >AboutTwo</g-link>
       </nav>
     </header>
     <slot/>
@@ -21,6 +25,26 @@ query {
   }
 }
 </static-query>
+
+<script>
+export default {
+
+  data: function () {
+    return {
+      currentLocale: this.$i18n.locale.toString(),
+      availableLocales: this.$i18n.availableLocales
+    }
+  },
+  methods: {
+    localeChanged () {
+      this.$router.push({
+        path: this.$tp(this.$route.path, this.currentLocale, true)
+      })
+    }
+  }
+}
+</script>
+
 
 <style>
 body {
