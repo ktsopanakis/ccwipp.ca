@@ -4,9 +4,7 @@
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
           
-          <select v-model="currentLocale" @change="localeChanged">
-    <option v-for="locale in availableLocales" :key="locale" :value="locale">{{ locale }}</option>
-  </select>
+          <locale-switcher/>
       </strong>
       <nav class="nav">
         <g-link class="nav__link" :to="$tp('/')" >Home</g-link>
@@ -27,21 +25,11 @@ query {
 </static-query>
 
 <script>
+import LocaleSwitcher from '../components/LocaleSwitcher.vue'
 export default {
+  components: { LocaleSwitcher },
 
-  data: function () {
-    return {
-      currentLocale: this.$i18n.locale.toString(),
-      availableLocales: this.$i18n.availableLocales
-    }
-  },
-  methods: {
-    localeChanged () {
-      this.$router.push({
-        path: this.$tp(this.$route.path, this.currentLocale, true)
-      })
-    }
-  }
+  
 }
 </script>
 
