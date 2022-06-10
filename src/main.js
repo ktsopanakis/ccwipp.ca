@@ -2,9 +2,13 @@ import { createApp, VueElement } from 'vue'
 import App from './App.vue'
 import './index.css'
 import router from './router'
+import { createMetaManager } from 'vue-meta'
 
-createApp( App)
+const app = createApp( App)
     .use( router)
-    .mount('#app')
+    .use( createMetaManager())
+
+await router.isReady()
+app.mount('#app')
 
 
