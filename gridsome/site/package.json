@@ -8,5 +8,11 @@
   },
   "dependencies": {
     "gridsome": "^0.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.8",
+    "gridsome-plugin-tailwindcss": "^4.1.1",
+    "postcss": "^8.4.14",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }
