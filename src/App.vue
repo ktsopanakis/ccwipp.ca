@@ -23,6 +23,8 @@ useMeta({
       ]
     })
 
+
+
 </script>
 
 <template>
@@ -30,6 +32,12 @@ useMeta({
       <template v-slot:title="{ content }">{{ content }} - Yay!</template>
      
     </metainfo>
+      <div class="locale-changer">
+    <select v-model="$i18n.locale">
+      <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
+    </select>
+  </div>
+  <p><p>{{ $t("message.hello") }}</p></p>
 
 <div class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
   <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0" src="/the-pension-plan_logo.png" alt="Woman's Face">
@@ -55,7 +63,7 @@ useMeta({
   </div>
   <p class="text-slate-500 group-hover:text-white text-sm">Create a new project from a variety of starting templates.</p>
 </a>
-<p>a</p>
+<p><p>{{ $t("message.hello") }}</p></p>
 <menu-icon title="this is an icon!" fillColor="#FFAA00" :size="48" class=""/>
 <p>b</p>
 <router-link to="/">Home</router-link>
