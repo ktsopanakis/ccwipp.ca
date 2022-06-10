@@ -2,7 +2,12 @@
   <MainLayout>
     <transition name="fade">
     <router-view />
+
+
     </transition>
+
+    <p>{{result}}</p>
+	<button @click="myFunction()">Click Me</button>
   </MainLayout>
 
 </template>
@@ -38,6 +43,17 @@
           }
         ]
       }
+    },
+      data: function () {
+        return {
+      result: ''
     }
+	  
+  },
+    methods:{
+    myFunction: function () {
+	 this.result = location.host;
+    }
+   }
   }
 </script>
