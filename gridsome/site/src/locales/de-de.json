@@ -11,5 +11,8 @@
         [
             "this is nested array error 1"
         ]
-    ]
+    ],
+    "images":{
+        "flag":"flag_en.png"
+    }
 }

@@ -16,9 +16,13 @@
  <span>
     Current locale: {{ $context.locale }}
   </span>
-   <span>
-    Current locale: {{ $context.locale }}
-  </span>
+   <transition name="fade">
+    <div key='en' v-if="$context.locale=='en-gb'">
+   <g-image  alt="Example image" src="../assets/images/flag_en.png" width="135" />
+    </div><div key='de' v-else-if="$context.locale=='de-de'"> 
+   <g-image  alt="Example image" src="../assets/images/flag_de.png" width="135" />
+   </div>
+   </transition>
   </Layout>
 </template>
 
@@ -33,6 +37,15 @@
       bodyAttrs: {
         class: 'custom-body-class-about'
       }
+    },
+ data: function () {
+    return {
+      imageUrl: "flag_en.png"
     }
   }
+  }
 </script>
+
+<style>
+
+</style>
