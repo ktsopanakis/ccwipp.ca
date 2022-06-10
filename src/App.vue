@@ -1,6 +1,9 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import MenuIcon from 'vue-material-design-icons/Menu.vue';
+
+components: {
+  MenuIcon;
+}
 
 </script>
 
@@ -16,9 +19,26 @@
         Product Engineer
       </p>
     </div>
-    <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message</button>
+    <button class="text-slate-500 font-medium px-4 py-1 text-sm block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0 text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message</button>
   </div>
 </div>
+<button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+  Save changes
+</button>
+<a href="#" class="group block max-w-xs mx-auto rounded-lg p-6 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-sky-500 hover:ring-sky-500">
+  <div class="flex items-center space-x-3">
+    <svg class="h-6 w-6 stroke-sky-500 group-hover:stroke-white" fill="none" viewBox="0 0 24 24"><!-- ... --></svg>
+    <h3 class="text-slate-900 group-hover:text-white text-sm font-semibold">New project</h3>
+  </div>
+  <p class="text-slate-500 group-hover:text-white text-sm">Create a new project from a variety of starting templates.</p>
+</a>
+<p>a</p>
+<menu-icon title="this is an icon!" fillColor="#FFAA00" :size="48" class=""/>
+<p>b</p>
+<router-link to="/">Home</router-link>
+<router-link to="/about">About</router-link>
+<a href="/about"> A link to about</a>
+<router-view></router-view>
 </template>
 
 <style>
