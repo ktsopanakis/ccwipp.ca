@@ -12,3 +12,15 @@
 2. Happy coding 🎉🙌
 
 ## Tasks
+
+1. Tailwind create design
+2. Axios actions
+3. GraphQL and the APIs for data
+4. Language default from domain
+5. Google Analytics
+6. Immuniweb
+7. SEO
+8. cssnano
+9. postcss
+
+## Deployment
