@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "CCWIPP commercil site",
   "scripts": {
-    "dev":"concurrently \"nodemon _serve.js\"   \"npx tailwindcss -i ./src/input.css -o ./temp/output.css --watch\"",
+    "dev":"concurrently \"nodemon _serve.js\"   \"npx tailwindcss -i ./src/input.css -o ./.temp/output.css --watch\"",
     "build": "node _build.js",
-    "postbuild": "npx tailwindcss -i ./src/input.css -o ./build/output.css"
+    "postbuild": "npx tailwindcss -i ./src/input.css -o ./.dist/output.css"
   },
   "devDependencies": {
     "concurrently": "^7.2.1",

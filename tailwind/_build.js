@@ -5,7 +5,7 @@ const path = require('path')
 const readdir = util.promisify(fs.readdir)
 
 
-var dir = './build';
+var dir = './.dist';
 
 console.log("Creating folder build if it does not exist");
 if (!fs.existsSync(dir)) {
@@ -29,7 +29,7 @@ readdir(dir)
                 foo: 'bar'
             });
 
-            fs.writeFile('./build/index.html', content, err => {
+            fs.writeFile('./.dist/index.html', content, err => {
                 if (err) {
                     console.error(err);
                 }
