@@ -2,16 +2,13 @@
   "name": "ccwipp.ca",
   "version": "0.0.1",
   "description": "CCWIPP commercil site",
-  "main": "src/index.js",
   "scripts": {
-    "start": "node serve.js",
-    "predev":"npx tailwindcss -i ./src/input.css -o ./public/output.css --watch",
-    "dev": "nodemon serve.js",
-    "build": "node build.js",
-    "postbuild":"npx tailwindcss -i ./src/input.css -o ./build/output.css",
-    "lint": "eslint **/*.js"
+    "dev":"concurrently \"nodemon _serve.js\"   \"npx tailwindcss -i ./src/input.css -o ./temp/output.css --watch\"",
+    "build": "node _build.js",
+    "postbuild": "npx tailwindcss -i ./src/input.css -o ./build/output.css"
   },
   "devDependencies": {
+    "concurrently": "^7.2.1",
     "express": "^4.18.1",
     "mustache": "^4.2.0",
     "nodemon": "^2.0.16",
