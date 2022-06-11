@@ -2,10 +2,7 @@
   <MainLayout>
     <transition name="fade">
     <router-view />
-
-
     </transition>
-
     <p>{{result}}</p>
 	<button @click="myFunction()">Click Me</button>
   </MainLayout>
