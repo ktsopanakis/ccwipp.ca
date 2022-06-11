@@ -3,5 +3,5 @@
 this updates the output css
 
 ```sh
-npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+npx tailwindcss -i ./src/input.css -o ./build/output.css --watch
 ```
