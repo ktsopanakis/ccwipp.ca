@@ -1,7 +1,9 @@
-# Vue 3 + Vite
+# Possible solutions
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+* gridsome, provides everything, is perfect, but is not maintained and npm cries for security problems
+* hugo, extremely fast
+* nuxtjs, the result is too big 10Mb for a simple page that does nothing, also endo of live
+* nuxtjs3, the result does nto have the html content
+* sveltekit, the result does not have the transaltions
+* vuejs, cannot work due to no content in resulting html
+* gatsby, it is react, bad internationalization didnt go far
