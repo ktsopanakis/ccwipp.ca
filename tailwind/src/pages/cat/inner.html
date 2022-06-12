@@ -6,5 +6,12 @@
 {% block content %}
 <h1>INNER</h1>
 {% include '../../components/chitchat.html'%}
+<script>
+document.addEventListener("DOMContentLoaded", function(event){
+    axios.get("https://reqres.in/api/users?page=2", {}).then(function (response) {
+        console.log(response)
+    })
+});
+</script>
 {% endblock %}
 
