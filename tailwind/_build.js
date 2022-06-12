@@ -1,6 +1,6 @@
 const util = require('util')
 const nunjucks = require('nunjucks')
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const readdir = util.promisify(fs.readdir)
 
@@ -21,22 +21,24 @@ readdir(dir)
             });
         }
     }).then(() => {
-            console.log("Creating files")
-            nunjucks.configure('src', {
-                autoescape: true
-            });
-            const content = nunjucks.render('index.html', {
-                foo: 'bar'
-            });
+        console.log("Creating files")
+        nunjucks.configure('src', {
+            autoescape: true
+        });
+        const content = nunjucks.render('index.html', {
+            foo: 'bar'
+        });
 
-            fs.writeFile('./.dist/index.html', content, err => {
-                if (err) {
-                    console.error(err);
-                }
-                // file written successfully
-            });
-        }
-    )
+        fs.writeFile('./.dist/index.html', content, err => {
+            if (err) {
+                console.error(err);
+            }
+            // file written successfully
+        });
+    }).then(() => {
+        console.log("Moving public files")
+        fs.copySync('./public', './.dist')
+    })
     .catch(err => {
         console.log(err)
     })

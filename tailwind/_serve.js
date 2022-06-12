@@ -1,4 +1,3 @@
-
 const express = require('express')
 const nunjucks = require('nunjucks')
 const path = require('path')
@@ -11,16 +10,15 @@ nunjucks.configure('src', {
     autoescape: true,
     express: app
 });
-// app.get('/output.css', function(req, res) {
-//     res.sendFile(path.join(__dirname,"/temp/output.css"));
-// });
-app.use(express.static('.temp/public'))
+app.use(express.static('./.temp/public'))
 app.use(express.static('public'))
-app.get('/', function(req, res) {
-    res.render('index.html');
+app.get('/', function (req, res) {
+    res.render('index.html', {
+        foo: 'baar'
+    }); 
 });
 
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
-  })
+})
