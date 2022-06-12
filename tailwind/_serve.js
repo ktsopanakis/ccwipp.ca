@@ -4,6 +4,9 @@ const path = require('path')
 const app = express()
 const port = 3000
 const a = require('path').basename(__dirname);
+const data = require("./src/data/_data.json");
+
+
 
 var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
@@ -23,9 +26,11 @@ app.use(connectLiveReload());
 app.use(express.static('./.temp/public'))
 app.use(express.static('public'))
 app.get('/', function (req, res) {
-    res.render('index.html', {
-        foo: ['This is foo3','asd']
-    }); 
+
+    res.render('pages/index.html', data['index']); 
+});
+app.get('/about', function (req, res) {
+    res.render('pages/about.html',data['about']); 
 });
 
 

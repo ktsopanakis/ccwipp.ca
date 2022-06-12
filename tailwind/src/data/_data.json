@@ -1,0 +1,9 @@
+{
+    "index":{
+        "foo": ["This is foo from file", "asd"]
+    },
+    
+    "about":{
+        "foo": ["About sasd", "ABOUT  asd"]
+    }
+}

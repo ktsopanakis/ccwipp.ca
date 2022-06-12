@@ -7,3 +7,6 @@ npx tailwindcss -i ./src/input.css -o ./build/output.css --watch
 ```
 
 [https://mozilla.github.io/nunjucks/](https://mozilla.github.io/nunjucks/)
+
+* Tailwing create a simple theme
+* Compile all the folder
