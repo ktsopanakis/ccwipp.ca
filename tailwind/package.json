@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "CCWIPP commercil site",
   "scripts": {
-    "dev": "concurrently \"nodemon --watch . --watch src -e js,json,html --inspect _serve.js\"   \"npx tailwindcss -i ./src/input.css -o ./.temp/public/output.css --watch\"",
+    "dev": "concurrently \"nodemon --watch . --watch src -e js,json,html _serve.js\"   \"npx tailwindcss -i ./src/input.css -o ./.temp/public/output.css --watch\"",
     "build": "node _build.js",
     "postbuild": "npx tailwindcss -i ./src/input.css -o ./.dist/output.css"
   },
