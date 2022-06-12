@@ -6,5 +6,10 @@
     
     "about":{
         "foo": ["About sasd", "ABOUT  asd"]
+    },
+    "cat":{
+        "inner":{
+            "foo": ["inner", "ABOUT  asd"]
+        }
     }
 }
