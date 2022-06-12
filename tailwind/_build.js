@@ -26,7 +26,7 @@ readdir(dir)
             autoescape: true
         });
         const content = nunjucks.render('index.html', {
-            foo: 'bar'
+            foo: 'This is foo'
         });
 
         fs.writeFile('./.dist/index.html', content, err => {
