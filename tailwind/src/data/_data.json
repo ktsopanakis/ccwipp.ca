@@ -1,6 +1,7 @@
 {
     "index":{
-        "foo": ["This is foo from file", "asd"]
+        "foo": ["This is foo from file", "asd"],
+        "items": [1,2,3,4,5]
     },
     
     "about":{

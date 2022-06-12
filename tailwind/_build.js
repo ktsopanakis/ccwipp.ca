@@ -3,6 +3,7 @@ const nunjucks = require('nunjucks')
 const fs = require('fs-extra')
 const path = require('path')
 const readdir = util.promisify(fs.readdir)
+const data = require("./src/data/_data.json");
 
 
 var dir = './.dist';
@@ -25,16 +26,24 @@ readdir(dir)
         nunjucks.configure('src', {
             autoescape: true
         });
-        const content = nunjucks.render('index.html', {
-            foo: ['This is foo','anoter string']
-        });
+        const index = nunjucks.render('pages/index.html', data['index']);
 
-        fs.writeFile('./.dist/index.html', content, err => {
+        fs.writeFile('./.dist/index.html', index, err => {
             if (err) {
                 console.error(err);
             }
             // file written successfully
         });
+
+        const about = nunjucks.render('pages/about.html', data['index']);
+
+        fs.writeFile('./.dist/about.html', about, err => {
+            if (err) {
+                console.error(err);
+            }
+            // file written successfully
+        });
+
     }).then(() => {
         console.log("Moving public files")
         fs.copySync('./public', './.dist')
