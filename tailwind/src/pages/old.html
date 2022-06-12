@@ -1,0 +1,17 @@
+
+{% extends "../layouts/parent.html" %}
+
+ {% block left %}
+This is the left side! child
+<ul>
+    {% for item in items %}
+      <li>{{ item }}</li>
+    {% else %}
+      <li>This would display if the 'item' collection were empty</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block right %}
+This is the right side!
+{% endblock %} 
